@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para mi amor Fátima</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      margin-top: 60px;
+      color: #fff;
+      text-shadow: 2px 2px 5px #c44;
+    }
+
+    .mensaje {
+      margin: 30px auto;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      font-size: 1.2em;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 2em;
+      color: #fff;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .foto {
+      width: 220px;
+      background: white;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .foto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .foto:hover {
+      transform: scale(1.05);
+    }
+
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHearts 8s linear infinite;
+      opacity: 0.6;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        bottom: -10px;
+        left: calc(100% * var(--i));
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 110%;
+        left: calc(100% * var(--i) + 30px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Te Amo, Fátima</h1>
+
+  <div class="mensaje">
+    Desde que llegaste a mi vida, todo tiene más color, más sentido y más amor.  
+    Gracias por cada sonrisa, cada abrazo y cada instante.  
+    Eres mi mayor regalo.  
+    <br><br>
+    <strong>Tu Jesús</strong>
+  </div>
+
+  <h2>Momentos Inolvidables</h2>
+  <div class="galeria">
+    <div class="foto"><img src="fotos/foto1.jpg" alt="foto1"></div>
+    <div class="foto"><img src="fotos/foto2.jpg" alt="foto2"></div>
+    <div class="foto"><img src="fotos/foto3.jpg" alt="foto3"></div>
+    <div class="foto"><img src="fotos/foto4.jpg" alt="foto4"></div>
+  </div>
+
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.setProperty('--i', Math.random());
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+</body>
+</html>
