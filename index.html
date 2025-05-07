@@ -147,6 +147,15 @@
     <source src="musica.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
+  <script>
+    window.addEventListener('click', function(){
+    const audio = 
+      document.getElementById('musica');
+      audio.play().catch(e) => {
+        consola.log('Reproduccion bloqueada:' , e);
+      });
+    });
+  </script>
 
 </body>
 </html>
